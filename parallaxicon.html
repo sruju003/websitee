@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Landing Page</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .background-layer {
+      background: url('26.png') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .content-layer {
+      z-index: 1;
+      position: relative;
+      color: #fff;
+      padding: 50px 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .foreground-layer {
+      background: url('27.png') no-repeat center bottom;
+      background-size: 100% auto;
+      height: 100vh;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .foreground-layer {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .foreground-layer {
+        width: 90%;
+      }
+    }
+
+    svg {
+      display: block;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 3;
+    }
+
+    .circle {
+      transition: transform 0.3s cubic-bezier(.64,1.95,.64,1);
+    }
+  </style>
+</head>
+<body>
+  <div class="background-layer"></div>
+  <div class="content-layer container">
+    <div class="row">
+      <div class="col-12">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h1>Welcome to the Parallax Landing Page</h1>
+        <p>This is a simple parallax landing page with a background image, scrolling text, and a foreground image that scales on scroll.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foreground-layer"></div>
+
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_3973_13808)">
+      <rect width="50" height="50" rx="10" fill="white"/>
+      <circle id="circle1" cx="677.684" cy="394.653" r="876.033" transform="rotate(103.631 677.684 394.653)" fill="#6D02F5"/>
+      <circle id="circle2" class="circle" cx="45" cy="6" r="43.8921" transform="rotate(103.631 45 6)" fill="#A329F5"/>
+      <circle id="circle3" class="circle" cx="45.0255" cy="6.02658" r="28.9562" transform="rotate(103.631 45.0255 6.02658)" fill="#C518C9"/>
+      <circle id="circle4" class="circle" cx="44.9615" cy="5.98485" r="13.3227" transform="rotate(103.631 44.9615 5.98485)" fill="#ED0392"/>
+      <path d="M15.0259 25.103C18.78 25.103 21.8233 22.0597 21.8233 18.3056C21.8233 14.5515 18.78 11.5082 15.0259 11.5082C11.2718 11.5082 8.22852 14.5515 8.22852 18.3056C8.22852 22.0597 11.2718 25.103 15.0259 25.103Z" fill="white"/>
+      <path d="M44.1245 16.3095C43.0527 14.1486 40.4969 13.2135 38.3035 14.1269C38.1928 14.1725 38.0648 14.1226 38.0106 14.0141C37.453 12.888 36.4897 12.0961 35.3853 11.723C34.2506 11.3411 32.9619 11.404 31.812 12.0094C29.612 13.1658 28.7897 15.9147 29.8962 18.1407L32.3197 23.0266C33.2461 24.8968 35.5155 25.6605 37.3857 24.7341L42.0721 22.4105C42.1003 22.3974 42.1285 22.3823 42.1567 22.3671C43.2371 21.803 44.0008 20.8614 44.3653 19.7852C44.732 18.6809 44.6843 17.4355 44.1245 16.3095Z" fill="white"/>
+      <path d="M24.8966 40.8457C22.3581 40.8457 19.9455 40.0408 17.9213 38.5199C15.9643 37.0511 14.4955 34.9596 13.7795 32.6294C13.2783 30.9979 14.1961 29.2709 15.8276 28.7697C17.4592 28.2685 19.1862 29.1862 19.6874 30.8178C20.3925 33.1176 22.4862 34.6645 24.8966 34.6645C27.307 34.6645 29.4007 33.1198 30.1058 30.8178C30.607 29.1862 32.334 28.2685 33.9656 28.7697C35.5971 29.2709 36.5149 30.9979 36.0137 32.6294C35.2999 34.9596 33.8289 37.0511 31.8719 38.5199C29.8476 40.0408 27.435 40.8457 24.8966 40.8457Z" fill="white"/>
+    </g>
+    <defs>
+      <clipPath id="clip0_3973_13808">
+        <rect width="50" height="50" rx="10" fill="white"/>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(window).scroll(function() {
+      var scrollTop = $(this).scrollTop();
+      var maxScroll = $(document).height() - $(window).height();
+      var scrollFraction = scrollTop / maxScroll;
+      var scale = 1 - (0.3 * scrollFraction);
+
+      $('.foreground-layer').css('transform', 'translateX(-50%) scale(' + scale + ')');
+    });
+
+    document.addEventListener('mousemove', function(event) {
+      const svg = document.querySelector('svg');
+      const rect = svg.getBoundingClientRect();
+      const mouseX = event.clientX - rect.left;
+      const mouseY = event.clientY - rect.top;
+
+      const circle = document.getElementById('circle4'); // Pink circle
+      const radius = parseFloat(circle.getAttribute('r'));
+
+      // Constrain the circle position to ensure at least 1/4th of the pink circle is visible
+      const constrainedX = Math.min(Math.max(mouseX, radius / 4), rect.width - radius / 4);
+      const constrainedY = Math.min(Math.max(mouseY, radius / 4), rect.height - radius / 4);
+
+      const offsetX = constrainedX - parseFloat(circle.getAttribute('cx'));
+      const offsetY = constrainedY - parseFloat(circle.getAttribute('cy'));
+
+      const circles = ['circle1', 'circle2', 'circle3', 'circle4'];
+
+      circles.forEach(circleId => {
+        const circle = document.getElementById(circleId);
+        const currentX = parseFloat(circle.getAttribute('cx'));
+        const currentY = parseFloat(circle.getAttribute('cy'));
+
+        // Update the circle's position with smooth transition
+        circle.style.transform = `translate(${currentX + offsetX - currentX}px, ${currentY + offsetY - currentY}px)`;
+      });
+    });
+  </script>
+</body>
+</html>
